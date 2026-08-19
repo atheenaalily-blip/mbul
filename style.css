@@ -1,0 +1,254 @@
+body {
+    background-color: #f8e8ee;
+    font-weight: bold;
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #ffffff,
+        0 0 20px #ffffff,
+        0 0 30px #f7b6cd;
+}
+
+h1 {
+    color: #d14d72;
+    font-weight: bold;
+    text-shadow: 0 0 8px #ffffff;
+  }
+
+p {
+    color: #000000;
+    font-weight: bold;
+}
+button {
+    margin-top: 35px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: #d14d72;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px #f7b6cd;
+    
+    animation: pulse 1.8s infinite;
+}
+
+button:hover {
+    background-color: #b83d60;
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+#message {
+    display: none;
+    animation: fadeIn 1s ease;
+}
+
+#message h1 {
+    color: #d14d72;
+}
+
+#message p {
+    color: #000000;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#page3 {
+    display: none;
+    margin: 70px auto 0;
+    padding: 35px 25px;
+    max-width: 350px;
+
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(209, 77, 114, 0.15);
+}
+#page3 h1 {
+    color: #d14d72;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #ffffff,
+        0 0 15px #f7b6cd;
+}
+
+#page3 p {
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+#page3 button {
+    margin-top: 25px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    background-color: #d14d72;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+#pixel-background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.pixel {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #d14d72;
+    opacity: 0.35;
+
+    animation: floatPixel linear infinite;
+}
+
+@keyframes floatPixel {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(-10vh);
+    }
+}
+#page4 {
+    display: none;
+    margin: 70px auto 0;
+    padding: 35px 25px;
+    max-width: 350px;
+
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(209, 77, 114, 0.15);
+}
+
+#page4 h1 {
+    color: #d14d72;
+    font-weight: bold;
+}
+
+#page4 p {
+    color: #000000;
+    font-weight: bold;
+    line-height: 1.8;
+}
+#page5 {
+    display: none;
+    margin: 60px auto;
+    max-width: 400px;
+}
+
+#page5 h1 {
+    color: #d14d72;
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #ffffff;
+}
+
+#page5 > p {
+    color: #555;
+    font-weight: bold;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.card {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(209, 77, 114, 0.12);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card span {
+    font-size: 12px;
+    color: #d14d72;
+}
+
+.card h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+.card p {
+    color: #555;
+    line-height: 1.6;
+    font-weight: normal;
+}
+#page6 {
+    display: none;
+    margin: 60px auto;
+    max-width: 400px;
+}
+
+#page6 h1 {
+    color: #d14d72;
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #ffffff;
+}
+
+.letter {
+    margin-top: 25px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(209, 77, 114, 0.15);
+}
+
+.letter p {
+    color: #333;
+    line-height: 1.8;
+    font-weight: normal;
+}
+
+.letter .signature {
+    margin-top: 30px;
+    text-align: right;
+    color: #d14d72;
+    font-weight: bold;
+}
+#last-button {
+    display: none;
+    margin-top: 30px;
+}

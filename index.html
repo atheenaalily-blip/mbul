@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for you</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <center>
+
+    <div id="pixel-background"></div>
+    <div id="opening">
+    <h1>for the one who reads this</h1>
+<p>i made this little website just for you.</p>
+  <button onclick="startWebsite()">tap me to start _<</button</button>
+    </div> 
+
+
+    <div id="message">
+        <h1>hey, you !</h1>
+        <p>i have a few things I want to tell you...</p>
+        <button onclick="showPage3()">tap me again :p</button>
+    </div>
+
+ 
+    <div id="page3">
+    <h1>okay, now listen...</h1>
+    <p>there are some things i've been wanting<br>
+        to tell you.
+    </p>
+      <audio controls>
+    <source src="ssstik.io_1787044219923.mp3" type="audio/mpeg">
+      </audio>
+    <button onclick="showPage4()">read this</button>
+    </div>
+
+    <div id="page4">
+    <h1>for you,</h1>
+    <p>i don't really know where to start...</p>
+    <button onclick="showPage5()">keep reading</button>
+    </div>
+
+    <div id="page5">
+    <h1>little things ♡</h1>
+    <p>tap one of them.</p>
+    <div class="cards">
+         <div class="card" onclick="openCard(1)">
+            <span>01</span>
+            <h2>a thing i remember</h2>
+            <p id="card1"></p>
+        </div>
+        <div class="card" onclick="openCard(2)">
+            <span>02</span>
+            <h2>a thing i love</h2>
+            <p id="card2"></p>
+        </div>
+        <div class="card" onclick="openCard(3)">
+            <span>03</span>
+            <h2>a thing i never said</h2>
+            <p id="card3"></p>
+        </div>
+    </div>
+    </div>
+
+    <button id="last-button" onclick="showPage6()">
+    one last thing ♡
+    </button>
+
+    <div id="page6">
+    <h1>one last thing ♡</h1>
+    <div class="letter">
+        <p>i don't really know how to put everything
+            into words... </p>
+        <p>but there is something i want you to know.</p>
+        <p>i'm really glad you exist in my life.</p>
+        <p class="signature">
+            — from me, to you ♡
+        </p>
+    </div>
+    </div>
+   
+    <script>
+        function startWebsite() {
+            document.getElementById("opening").style.display = "none";
+            document.getElementById("message").style.display = "block";
+        }
+      function showPage3() {
+    document.getElementById("message").style.display = "none";
+    document.getElementById("page3").style.display = "block";
+      }
+          const pixelBackground = document.getElementById("pixel-background");
+
+    for (let i = 0; i < 40; i++) {
+        const pixel = document.createElement("span");
+
+        pixel.classList.add("pixel");
+
+        pixel.style.left = Math.random() * 100 + "%";
+        pixel.style.animationDuration = (5 + Math.random() * 8) + "s";
+        pixel.style.animationDelay = Math.random() * 8 + "s";
+
+        pixelBackground.appendChild(pixel);
+    }
+      function showPage4() {
+    document.getElementById("page3").style.display = "none";
+    document.getElementById("page4").style.display = "block";
+      }
+      function showPage5() {
+    document.getElementById("page4").style.display = "none";
+    document.getElementById("page5").style.display = "block";
+            }
+      let openedCards = [];
+
+      function openCard(number) {
+
+    if (number === 1) {
+        document.getElementById("card1").innerText =
+            "a little memory that i still keep close to my heart.";
+    }
+
+    if (number === 2) {
+        document.getElementById("card2").innerText =
+            "there are so many little things about you that i adore.";
+    }
+
+    if (number === 3) {
+        document.getElementById("card3").innerText =
+            "maybe someday i'll find the courage to say it all.";
+    }
+
+    if (!openedCards.includes(number)) {
+        openedCards.push(number);
+    }
+
+    if (openedCards.length === 3) {
+        document.getElementById("last-button").style.display = "inline-block";
+    }
+}
+      function showPage6() {
+    document.getElementById("page5").style.display = "none";
+    document.getElementById("page6").style.display = "block";
+      }
+    </script>
+
+
+  </center>
+</body>
+</html>
