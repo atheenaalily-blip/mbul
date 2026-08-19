@@ -11,38 +11,74 @@
 
     <div id="pixel-background"></div>
     <div id="opening">
-    <h1>for the one who reads this</h1>
+    <h1>hai wiliam :p</h1>
 <p>i made this little website just for you.</p>
-  <button onclick="startWebsite()">tap me to start _<</button</button>
+  <button onclick="startWebsite()">tap me to start _<</button>
     </div> 
 
 
     <div id="message">
-        <h1>hey, you !</h1>
-        <p>i have a few things I want to tell you...</p>
+        <p>i have a few things i want to tell you...</p>
         <button onclick="showPage3()">tap me again :p</button>
     </div>
 
  
     <div id="page3">
-    <h1>okay, now listen...</h1>
-    <p>there are some things i've been wanting<br>
-        to tell you.
-    </p>
-      <audio controls>
-    <source src="ssstik.io_1787044219923.mp3" type="audio/mpeg">
-      </audio>
-    <button onclick="showPage4()">read this</button>
+    <h1>made just for you</h1>
+    <div class="music-player">
+    <div class="album-cover" id="albumCover">
+        <img src="Ichihime.jpeg" alt="song cover" width="300">
+    </div>
+    <div class="music-info">
+        <div class="music-title">
+            a little song for you
+        </div>
+        <div class="music-subtitle">
+            listen for a while
+        </div>
+    </div>
+    <div class="progress-area">
+        <div class="time">
+            <span id="currentTime">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
+        <input
+            type="range"
+            id="seekBar"
+            value="0"
+            min="0"
+            step="0.1"
+        >
+    </div>
+    <div class="music-controls">
+        <button onclick="skipBackward()">⏮</button>
+        <button
+            class="play-button"
+            onclick="toggleMusic()">
+            ▶
+        </button>
+        <button onclick="skipForward()">⏭</button>
+    </div>
+    <audio id="mySong">
+        <source
+            src="ssstik.io_1787044219923.mp3"
+            type="audio/mpeg">
+    </audio>
     </div>
 
+
+      <button onclick="showPage4()">
+        keep reading
+    </button>
+    </div>
     <div id="page4">
-    <h1>for you,</h1>
     <p>i don't really know where to start...</p>
     <button onclick="showPage5()">keep reading</button>
     </div>
 
+
     <div id="page5">
-    <h1>little things ♡</h1>
+    <h1>little things</h1>
     <p>tap one of them.</p>
     <div class="cards">
          <div class="card" onclick="openCard(1)">
@@ -57,91 +93,317 @@
         </div>
         <div class="card" onclick="openCard(3)">
             <span>03</span>
-            <h2>a thing i never said</h2>
+            <h2>a something i wish</h2>
             <p id="card3"></p>
         </div>
     </div>
     </div>
 
     <button id="last-button" onclick="showPage6()">
-    one last thing ♡
+    one last thing
     </button>
 
     <div id="page6">
-    <h1>one last thing ♡</h1>
+    <h1>one last thing</h1>
     <div class="letter">
-        <p>i don't really know how to put everything
-            into words... </p>
-        <p>but there is something i want you to know.</p>
-        <p>i'm really glad you exist in my life.</p>
+        <p>hi ho! sayangku, cintaku, duniaku, kekasihku<br>
+        makasih ya udah ada selalu buat
+        aku walaupun aku sering minta dingertiin kamu,
+        usilin kamu, makasih udah mau selalu sabar sama aku,
+        jangan lupa makan, tidur tepat waktu jangan gt teruss,
+        kamu mw aku mayah mayahin kamu teruss?? noo noo yep yup,
+        btw i have another surprise buat kamu bulan depan, ditunggu
+        aja ya baee, i love you so so much</p>
         <p class="signature">
-            — from me, to you ♡
+             from sasa, to wildan
         </p>
     </div>
     </div>
    
-    <script>
-        function startWebsite() {
-            document.getElementById("opening").style.display = "none";
-            document.getElementById("message").style.display = "block";
-        }
-      function showPage3() {
-    document.getElementById("message").style.display = "none";
-    document.getElementById("page3").style.display = "block";
-      }
-          const pixelBackground = document.getElementById("pixel-background");
+<script>
+
+    // =========================
+    // PAGE 1 → PAGE 2
+    // =========================
+
+    function startWebsite() {
+
+        document.getElementById("opening").style.display = "none";
+
+        document.getElementById("message").style.display = "flex";
+
+    }
+
+
+    // =========================
+    // PAGE 2 → PAGE 3
+    // =========================
+
+    function showPage3() {
+
+        document.getElementById("message").style.display = "none";
+
+        document.getElementById("page3").style.display = "block";
+
+    }
+
+
+    // =========================
+    // PIXEL BACKGROUND
+    // =========================
+
+    const pixelBackground =
+        document.getElementById("pixel-background");
 
     for (let i = 0; i < 40; i++) {
+
         const pixel = document.createElement("span");
 
         pixel.classList.add("pixel");
 
-        pixel.style.left = Math.random() * 100 + "%";
-        pixel.style.animationDuration = (5 + Math.random() * 8) + "s";
-        pixel.style.animationDelay = Math.random() * 8 + "s";
+        pixel.style.left =
+            Math.random() * 100 + "%";
+
+        pixel.style.animationDuration =
+            (5 + Math.random() * 8) + "s";
+
+        pixel.style.animationDelay =
+            Math.random() * 8 + "s";
 
         pixelBackground.appendChild(pixel);
-    }
-      function showPage4() {
-    document.getElementById("page3").style.display = "none";
-    document.getElementById("page4").style.display = "block";
-      }
-      function showPage5() {
-    document.getElementById("page4").style.display = "none";
-    document.getElementById("page5").style.display = "block";
-            }
-      let openedCards = [];
 
-      function openCard(number) {
-
-    if (number === 1) {
-        document.getElementById("card1").innerText =
-            "a little memory that i still keep close to my heart.";
     }
 
-    if (number === 2) {
-        document.getElementById("card2").innerText =
-            "there are so many little things about you that i adore.";
+
+    // =========================
+    // PAGE 3 → PAGE 4
+    // =========================
+
+    function showPage4() {
+
+        document.getElementById("page3").style.display = "none";
+
+        document.getElementById("page4").style.display = "block";
+
     }
 
-    if (number === 3) {
-        document.getElementById("card3").innerText =
-            "maybe someday i'll find the courage to say it all.";
+
+    // =========================
+    // PAGE 4 → PAGE 5
+    // =========================
+
+    function showPage5() {
+
+        document.getElementById("page4").style.display = "none";
+
+        document.getElementById("page5").style.display = "block";
+
     }
 
-    if (!openedCards.includes(number)) {
-        openedCards.push(number);
+
+    // =========================
+    // CARDS
+    // =========================
+
+    let openedCards = [];
+
+
+    function openCard(number) {
+
+        if (number === 1) {
+
+            document.getElementById("card1").innerText =
+                "aku masih inget waktu pertama kali kenal kamu, lucu bgd km dulu 'aku mau disampingmu terus' masih kesimpen sampe sekarang wksks";
+
+        }
+
+
+        if (number === 2) {
+
+            document.getElementById("card2").innerText =
+                "yang aku suka dari kamu ya? kamu itu lucu, baik, mau berusaha, konyol, aku paling suka sama sifat randommu itu, di era sekarang yang pada pingin cowo ganteng, care, dll but i'm no aku lebih suka funny guy yang bisa buat aku ceria setiap hari, and its you, ily bae";
+
+        }
+
+
+        if (number === 3) {
+
+            document.getElementById("card3").innerText =
+                "untuk yang kedua kalinya aku gamau kehilangan kamu lagi, aku mau kita berdua bisa berubah semakin baik kedepannya bukan mencari yang lebih baik, i want us forever..";
+
+        }
+
+
+        if (!openedCards.includes(number)) {
+
+            openedCards.push(number);
+
+        }
+
+
+        if (openedCards.length === 3) {
+
+            document.getElementById("last-button").style.display =
+                "inline-block";
+
+        }
+
     }
 
-    if (openedCards.length === 3) {
-        document.getElementById("last-button").style.display = "inline-block";
+
+    // =========================
+    // PAGE 5 → PAGE 6
+    // =========================
+
+    function showPage6() {
+
+        document.getElementById("page5").style.display = "none";
+
+        document.getElementById("page6").style.display = "block";
+
     }
-}
-      function showPage6() {
-    document.getElementById("page5").style.display = "none";
-    document.getElementById("page6").style.display = "block";
-      }
-    </script>
+
+
+    // =========================
+    // MUSIC PLAYER
+    // =========================
+
+    const mySong =
+        document.getElementById("mySong");
+
+    const albumCover =
+        document.getElementById("albumCover");
+
+    const playButton =
+        document.querySelector(".play-button");
+
+    const seekBar =
+        document.getElementById("seekBar");
+
+
+    // PLAY / PAUSE
+
+    function toggleMusic() {
+
+        if (mySong.paused) {
+
+            mySong.play();
+
+            albumCover.classList.add("playing");
+
+            playButton.innerText = "Ⅱ";
+
+        } else {
+
+            mySong.pause();
+
+            albumCover.classList.remove("playing");
+
+            playButton.innerText = "▶";
+
+        }
+
+    }
+
+
+    // FORMAT WAKTU
+
+    function formatTime(seconds) {
+
+        const minutes =
+            Math.floor(seconds / 60);
+
+        const secs =
+            Math.floor(seconds % 60);
+
+        return minutes + ":" +
+            (secs < 10 ? "0" : "") +
+            secs;
+
+    }
+
+
+    // LAGU SUDAH SIAP
+
+    mySong.addEventListener(
+        "loadedmetadata",
+        function () {
+
+            seekBar.max =
+                mySong.duration;
+
+            document.getElementById(
+                "duration"
+            ).innerText =
+                formatTime(mySong.duration);
+
+        }
+    );
+
+
+    // WAKTU LAGU BERJALAN
+
+    mySong.addEventListener(
+        "timeupdate",
+        function () {
+
+            seekBar.value =
+                mySong.currentTime;
+
+            document.getElementById(
+                "currentTime"
+            ).innerText =
+                formatTime(mySong.currentTime);
+
+        }
+    );
+
+
+    // GESER PROGRESS BAR
+
+    seekBar.addEventListener(
+        "input",
+        function () {
+
+            mySong.currentTime =
+                seekBar.value;
+
+        }
+    );
+
+
+    // MAJU 10 DETIK
+
+    function skipForward() {
+
+        mySong.currentTime += 10;
+
+    }
+
+
+    // MUNDUR 10 DETIK
+
+    function skipBackward() {
+
+        mySong.currentTime -= 10;
+
+    }
+
+
+    // LAGU SELESAI
+
+    mySong.addEventListener(
+        "ended",
+        function () {
+
+            albumCover.classList.remove("playing");
+
+            playButton.innerText = "▶";
+
+        }
+    );
+
+</script>
 
 
   </center>
